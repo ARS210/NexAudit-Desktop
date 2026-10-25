@@ -1,0 +1,9 @@
+# NexAudit uses only the Python standard library (sqlite3, subprocess,
+# tkinter, csv, dataclasses, pathlib) — nothing to pip-install for the
+# core app.
+#
+# tkinter itself ships as a separate OS package on Debian/Ubuntu-based
+# systems (see setup.sh / README.md): `sudo apt install python3-tk`
+#
+# This file is kept so the project has a conventional place to add
+# optional dependencies later (e.g. a PDF export library).

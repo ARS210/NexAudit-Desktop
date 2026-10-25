@@ -1,0 +1,17 @@
+# Example sudoers snippet for NexAudit — DO NOT run the whole GUI as root.
+#
+# This grants your user passwordless sudo ONLY for the specific
+# aircrack-ng suite binaries NexAudit calls, not a blanket NOPASSWD.
+#
+# Install with:
+#   sudo visudo -f /etc/sudoers.d/nexaudit
+# (paste the contents below, adjusting <youruser>)
+#
+# Then run NexAudit's privileged calls prefixed with `sudo`, or wire
+# InterfaceManager/ScanSession to prepend "sudo" to their commands.
+
+<youruser> ALL=(root) NOPASSWD: /usr/sbin/airmon-ng, /usr/sbin/airodump-ng
+
+# Alternative (more GUI-friendly): use pkexec + a polkit policy instead
+# of sudoers, so the user gets a graphical auth prompt per privileged
+# action rather than a blanket NOPASSWD grant.
